@@ -4,6 +4,12 @@ A public glossary and lightweight SysML v2 model set for robotics and Model-Base
 
 This repository is intended as a reference for common robotics terms, ROS 2 concepts, simulation vocabulary, and a small Autonomous Mobile Robot (AMR) architecture example. It supports the public robotics portfolio by making terminology and architecture assumptions explicit.
 
+## What This Is For
+
+- Establish a shared vocabulary across robotics, ROS 2, and simulation work
+- Provide lightweight SysML v2 examples for public MBSE discussion
+- Give the rest of the portfolio a consistent terminology and architecture reference
+
 ## What It Demonstrates
 
 - Shared vocabulary for robotics, simulation, ROS 2, and MBSE discussions.
