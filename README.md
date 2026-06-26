@@ -1,32 +1,51 @@
-# The AI & Robotics SME Glossary
+# AI & Robotics Glossary + SysML v2 Model Library
 
-For repo-specific working rules, read [docs/OPERATING_STANDARD.md](docs/OPERATING_STANDARD.md).
+A curated, docs-only reference for cyber-physical robotics work. It contains two things:
 
-> *This repository is a canonical terminology authority and MBSE model library for cyber-physical robotics projects. Other repositories can hyperlink back to the GLOSSARY.md defined here.*
+1. **[`GLOSSARY.md`](./GLOSSARY.md)** — a living glossary of the terms, acronyms, and concepts used across modern robotics and AI (ROS 2, build tooling, NVIDIA Isaac Sim / Jetson, simulation workflows, and more).
+2. **[`sysml_v2_models/`](./sysml_v2_models/)** — a small library of standard-compliant **SysML v2 textual** models for an Autonomous Mobile Robot (AMR), demonstrating Model-Based Systems Engineering (MBSE) decomposition.
 
-Welcome to my personal AI & Robotics Glossary. This glossary is a curated, living document of the key terms, concepts, and acronyms that form the language of modern robotics and artificial intelligence.
+There is no build step, no service, and no code to run — everything here is Markdown and SysML v2 text that you read and browse directly on GitHub.
 
-## 🚀 Purpose
+## What this is (and isn't)
 
-The goal of this glossary is to serve two primary purposes:
+- **It is** a personal, curated terminology reference and a worked example of SysML v2 textual modeling that other projects can hyperlink back to.
+- **It isn't** an executable OWL ontology, a reasoner, or a RAG pipeline. Despite the historical "ontology" name, no formal OWL/SSN ontology or reasoning engine ships in this repo.
 
-1.  **A Knowledge Base:** To solidify my own understanding of core concepts by articulating them in a clear and concise manner.
-2.  **A Professional Resource:** To provide context for the technologies and methodologies used in my other portfolio projects, demonstrating a deep and thorough understanding of the field.
+## How to navigate
 
-This document is a foundational component of my journey to becoming a Subject Matter Expert (SME) in AI and Robotics.
+| If you want to… | Go to |
+| --- | --- |
+| Look up a term or acronym | [`GLOSSARY.md`](./GLOSSARY.md) |
+| See the AMR SysML v2 models and how they fit together | [`sysml_v2_models/README.md`](./sysml_v2_models/README.md) |
+| Read a short browse guide | [`QUICKSTART.md`](./QUICKSTART.md) |
+| Understand the documentation conventions | [`docs/OPERATING_STANDARD.md`](./docs/OPERATING_STANDARD.md) |
 
-## 🏛️ Systems Engineering (SysML v2 Models)
+## SysML v2 models
 
-In addition to the glossary, this workspace hosts foundational Model-Based Systems Engineering (MBSE) artifacts for complex robotic systems. See the [`sysml_v2_models/`](./sysml_v2_models/) directory for standard-compliant SysML v2 block definition, internal block, and system decomposition models.
+The [`sysml_v2_models/`](./sysml_v2_models/) directory models an AMR across three complementary views, plus a UAF mapping outline:
 
+- **`bdd_amr_architecture.sysml`** — block/part definitions (compute, sensors, motor controller, power) with attributes and ports.
+- **`ibd_amr_interconnects.sysml`** — instantiates those parts inside an `AMR_Platform` and wires their ports (data and power flows).
+- **`pkg_amr_decomposition.sysml`** — the `Package → Part → Port` hierarchy using redefinitions.
+- **`uaf_reference_outline.md`** — a draft outline mapping the AMR to the Unified Architecture Framework.
 
-> [!WARNING]
-> DO NOT edit models or documentation natively. Launch via **"Dev Containers: Reopen in Container"** to enforce standardized formatting and text engineering integrity.
+The files are plain text using SysML v2 textual (KerML) notation. View them in any editor or directly on GitHub; the Mermaid diagram in [`sysml_v2_models/README.md`](./sysml_v2_models/README.md) renders the structural decomposition.
 
-## 🔗 Integration
+## Optional: check internal links
 
-Terms defined in this glossary are linked from the `README.md` files of my other projects. This creates a cohesive and interconnected professional portfolio.
+A small standard-library-only Python script verifies that every internal Markdown link and SysML file reference in this repo resolves:
 
-## 📜 License
+```bash
+python3 scripts/check_links.py
+```
 
-This project is licensed under the Apache 2.0 License. See the [`LICENSE`](./LICENSE) file for details.
+It needs only Python 3.8+ (no dependencies) and is the only runnable thing in the repo.
+
+## Integration
+
+Terms defined in [`GLOSSARY.md`](./GLOSSARY.md) are intended to be linked from the `README.md` files of related projects, creating a cohesive cross-project terminology reference.
+
+## License
+
+Licensed under the Apache 2.0 License. See [`LICENSE`](./LICENSE) for details.
