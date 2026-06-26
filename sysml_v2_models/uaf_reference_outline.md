@@ -1,6 +1,6 @@
 # UAF Reference Outline: Autonomous Mobile Robot (AMR)
 
-This outline maps the AMR system to the Unified Architecture Framework (UAF) to demonstrate advanced MBSE capabilities (Claim `CERT_04`).
+This is a draft outline mapping the AMR system to the Unified Architecture Framework (UAF), illustrating how the SysML v2 models in this directory relate to standard UAF views. It is a reference sketch, not a complete UAF model.
 
 ## 1. Concept View (CV)
 *   **CV-1 (Vision):** The high-level vision for the AMR is to provide autonomous navigation and operation within a structured environment.
