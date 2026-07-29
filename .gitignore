@@ -6,6 +6,7 @@ __pycache__/
 .cache/
 volumes/
 seed_data/
+onyx_citadel_node/
 *.pyc
 .pytest_cache/
 *.gguf

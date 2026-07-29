@@ -1,51 +1,72 @@
-# AI & Robotics Glossary + SysML v2 Model Library
+# The AI & Robotics SME Glossary
 
-A curated, docs-only reference for cyber-physical robotics work. It contains two things:
+For repo-specific working rules, read [AGENTS.md](AGENTS.md) and [docs/OPERATING_STANDARD.md](docs/OPERATING_STANDARD.md).
 
-1. **[`GLOSSARY.md`](./GLOSSARY.md)** — a living glossary of the terms, acronyms, and concepts used across modern robotics and AI (ROS 2, build tooling, NVIDIA Isaac Sim / Jetson, simulation workflows, and more).
-2. **[`sysml_v2_models/`](./sysml_v2_models/)** — a small library of standard-compliant **SysML v2 textual** models for an Autonomous Mobile Robot (AMR), demonstrating Model-Based Systems Engineering (MBSE) decomposition.
 
-There is no build step, no service, and no code to run — everything here is Markdown and SysML v2 text that you read and browse directly on GitHub.
+> **Part of the Onyx Citadel Cyber-Physical AI Ecosystem**
+> *This repository is the canonical terminology authority and MBSE model library for every cyber-physical project in the Citadel. All other repositories hyperlink back to the GLOSSARY.md defined here.*
+Welcome to my personal AI & Robotics Glossary. This glossary is a curated, living document of the key terms, concepts, and acronyms that form the language of modern robotics and artificial intelligence.
 
-## What this is (and isn't)
+## 🚀 Purpose
 
-- **It is** a personal, curated terminology reference and a worked example of SysML v2 textual modeling that other projects can hyperlink back to.
-- **It isn't** an executable OWL ontology, a reasoner, or a RAG pipeline. Despite the historical "ontology" name, no formal OWL/SSN ontology or reasoning engine ships in this repo.
+The goal of this glossary is to serve two primary purposes:
 
-## How to navigate
+1.  **A Knowledge Base:** To solidify my own understanding of core concepts by articulating them in a clear and concise manner.
+2.  **A Professional Resource:** To provide context for the technologies and methodologies used in my other portfolio projects, demonstrating a deep and thorough understanding of the field.
 
-| If you want to… | Go to |
-| --- | --- |
-| Look up a term or acronym | [`GLOSSARY.md`](./GLOSSARY.md) |
-| See the AMR SysML v2 models and how they fit together | [`sysml_v2_models/README.md`](./sysml_v2_models/README.md) |
-| Read a short browse guide | [`QUICKSTART.md`](./QUICKSTART.md) |
-| Understand the documentation conventions | [`docs/OPERATING_STANDARD.md`](./docs/OPERATING_STANDARD.md) |
+This document is a foundational component of my journey to becoming a Subject Matter Expert (SME) in AI and Robotics.
 
-## SysML v2 models
+## 🏛️ Systems Engineering (SysML v2 Models)
 
-The [`sysml_v2_models/`](./sysml_v2_models/) directory models an AMR across three complementary views, plus a UAF mapping outline:
+In addition to the glossary, this workspace hosts foundational Model-Based Systems Engineering (MBSE) artifacts for complex robotic systems. See the [`sysml_v2_models/`](./sysml_v2_models/) directory for standard-compliant SysML v2 block definition, internal block, and system decomposition models.
 
-- **`bdd_amr_architecture.sysml`** — block/part definitions (compute, sensors, motor controller, power) with attributes and ports.
-- **`ibd_amr_interconnects.sysml`** — instantiates those parts inside an `AMR_Platform` and wires their ports (data and power flows).
-- **`pkg_amr_decomposition.sysml`** — the `Package → Part → Port` hierarchy using redefinitions.
-- **`uaf_reference_outline.md`** — a draft outline mapping the AMR to the Unified Architecture Framework.
 
-The files are plain text using SysML v2 textual (KerML) notation. View them in any editor or directly on GitHub; the Mermaid diagram in [`sysml_v2_models/README.md`](./sysml_v2_models/README.md) renders the structural decomposition.
+> [!WARNING]
+> DO NOT edit models or documentation natively. Launch via **"Dev Containers: Reopen in Container"** to enforce standardized formatting and text engineering integrity.
 
-## Optional: check internal links
+## 🔗 Integration
 
-A small standard-library-only Python script verifies that every internal Markdown link and SysML file reference in this repo resolves:
+Terms defined in this glossary are linked from the `README.md` files of my other projects. This creates a cohesive and interconnected professional portfolio.
 
-```bash
-python3 scripts/check_links.py
-```
+## 📜 License
 
-It needs only Python 3.8+ (no dependencies) and is the only runnable thing in the repo.
+This project is licensed under the Apache 2.0 License. See the [`LICENSE`](./LICENSE) file for details.
 
-## Integration
+## Private vs public variant strategy
 
-Terms defined in [`GLOSSARY.md`](./GLOSSARY.md) are intended to be linked from the `README.md` files of related projects, creating a cohesive cross-project terminology reference.
+This repo has two coordinated copies:
 
-## License
+- `robotics-ontology` (private): working repo with internal notes and implementation references.
+- `robotics-ontology-public` (public): sanitized, portfolio-safe publication surface.
 
-Licensed under the Apache 2.0 License. See [`LICENSE`](./LICENSE) for details.
+The split exists to keep non-public operational context separate while ensuring the public
+repo contains only curated technical assets.
+
+### How to keep them aligned
+
+From the private repo root:
+
+1. `./scripts/sync-public.sh`
+2. Review the printed status diff.
+3. `./scripts/sync-public.sh --push`
+
+Preferred shorthand:
+
+1. `make sync-check`
+2. `make sync-preflight` (runs strict check + strict dry-run)
+3. `make sync-push`
+
+`--dry-run` is supported for preview-only operation.
+
+Each successful non-dry-run sync writes an auditable `public-sync-manifest.json` into
+the public repo summarizing:
+
+- source private commit and branch
+- public remote/branch
+- sync mode flags
+- changed paths in that sync
+
+For deterministic full-prune exports, use:
+
+1. `./scripts/sync-public.sh --strict --dry-run` (or `make sync-dry-run`)
+2. `./scripts/sync-public.sh --strict --push` (or `make sync-push`)
