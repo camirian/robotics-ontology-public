@@ -1,16 +1,29 @@
-# Robotics Ontology: Operational Walkthrough
+# Robotics Reference Walkthrough
 
-## 1. Domain Discovery
-Browse the `GLOSSARY.md` to identify existing robotic components and environmental models.
+## 1. Discover the vocabulary
 
-## 2. Structural Modeling
-Define the physical architecture of a new agent in the SysML v2 models. This ensures that the agent's capabilities are formally declared before software development begins.
+Browse [GLOSSARY.md](GLOSSARY.md) to find terms for robotic components,
+interfaces, simulation, and systems engineering.
 
-## 3. Semantic Verification
-Use the OWL reasoner to verify that the proposed robotic architecture is physically and logically consistent with the Citadel's safety policies.
+## 2. Review the structural examples
 
-## 4. Integration with Sim-to-Real
-The ontology provides the parameters for the Isaac Sim environment, ensuring that the digital twin matches the formally modeled hardware.
+Open [sysml_v2_models/README.md](sysml_v2_models/README.md) for the AMR model
+overview, then inspect the SysML v2 textual files it links to. The examples
+show decomposition and interconnection; they are not a complete robot design.
 
-## 5. Continuous Evolution
-Update the roadmap in `ROADMAP.md` as new robotic paradigms (e.g., soft robotics, neuromorphic sensing) are integrated into the Citadel's capabilities.
+## 3. Keep claims within the public boundary
+
+This repository does not include an OWL ontology, a reasoner, safety policies,
+a RAG index, simulation configuration, or deployment tooling. Do not infer
+those capabilities from the historical repository name or the model examples.
+
+## 4. Verify navigability before sharing changes
+
+Run the internal-reference check:
+
+```bash
+python3 scripts/check_links.py
+```
+
+For a public-facing change, also inspect the changed files for unsupported
+claims, private context, and references to tools that are not included here.
