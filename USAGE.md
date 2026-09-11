@@ -1,25 +1,32 @@
-# Robotics Ontology: Usage & Modeling Protocols
+# Using the Robotics Reference
 
-## 1. Defining a New Robot Type
-1. Create a new `.sysml` file in `sysml_v2_models/`.
-2. Inherit from the base `RoboticSystem` class.
-3. Define the `Actuators` and `Sensors` using the classes defined in `GLOSSARY.md`.
+This repository is a browsable reference, not an executable ontology service.
+It includes a Markdown glossary and illustrative SysML v2 textual models.
 
-## 2. Validating the Model
-Run the consistency check:
+## Look up a term
+
+Start with [GLOSSARY.md](GLOSSARY.md). Entries define terminology used by the
+related public robotics projects and link to relevant concepts where useful.
+
+## Inspect the model examples
+
+Read [sysml_v2_models/README.md](sysml_v2_models/README.md), then open the
+three AMR model files in that directory. They are examples for study and
+adaptation; this repository does not bundle a SysML parser, renderer, or
+semantic validator.
+
+If you need formal parsing or rendering, choose and install an external SysML
+v2 toolchain independently. Its output is outside this repository's verified
+scope.
+
+## Check repository links
+
+The included standard-library checker verifies internal Markdown links and
+SysML file references:
+
 ```bash
-python3 scripts/validate_models.py --path sysml_v2_models/my_new_robot.sysml
+python3 scripts/check_links.py
 ```
 
-## 3. Exporting Knowledge
-To update the LLM's understanding of the robotic domain:
-```bash
-./scripts/update_rag_index.sh
-```
-
-## 4. Troubleshooting
-### Reasoning Timeout
-If the reasoner hangs, check for circular dependencies in the class hierarchy. Use the `--depth` flag to limit reasoning complexity.
-
-### SysML Syntax Errors
-Verify that you are using the SysML v2 textual notation (KerML).
+It checks repository references only. It does not validate SysML syntax,
+reason about a model, build a RAG index, or make a safety claim.

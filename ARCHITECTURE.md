@@ -1,18 +1,43 @@
-# Robotics Ontology: System Architecture & Knowledge Modeling
+# Architecture: Public Robotics Reference
 
-## 1. Overview
-The Robotics Ontology is the semantic backbone of the Onyx Citadel's physical AI agents. It provides a formal, machine-readable definition of robotic systems, kinematics, and environmental constraints.
+## Scope
 
-## 2. Modeling Standards
-- **OWL 2 (Web Ontology Language):** Used for formal reasoning and classification.
-- **SysML v2 (System Modeling Language):** Used for descriptive structural and behavioral modeling.
-- **W3C Semantic Sensor Network (SSN):** Base ontology for sensor and observation modeling.
+This repository is a static technical reference. Its source of truth is:
 
-## 3. Core Classes
-- `RoboticSystem`: The root class for all physical agents.
-- `Actuator`: Subclasses defining movement and manipulation mechanisms.
-- `Sensor`: Subclasses for environmental perception (LIDAR, Camera, IMU).
-- `Environment`: Definitions of physical constraints and hazard models.
+- [GLOSSARY.md](GLOSSARY.md) for terminology and concise context;
+- [sysml_v2_models/](sysml_v2_models/) for illustrative SysML v2 textual AMR
+  models; and
+- [docs/OPERATING_STANDARD.md](docs/OPERATING_STANDARD.md) for documentation
+  conventions.
 
-## 4. Reasoning Engine
-The system uses the Hermit or Pellet reasoner to identify inconsistencies in the physical agent definitions before they are deployed to simulation or real hardware.
+There is no running service, ontology database, OWL export, reasoner, RAG
+pipeline, simulator integration, or deployment configuration in this public
+repository.
+
+## Relationships
+
+The three SysML example files describe complementary views of the same
+illustrative Autonomous Mobile Robot:
+
+1. `bdd_amr_architecture.sysml` defines parts and ports.
+2. `ibd_amr_interconnects.sysml` instantiates those parts and connects flows.
+3. `pkg_amr_decomposition.sysml` records the package-to-part hierarchy.
+
+The glossary explains terms that readers encounter in these examples and in
+the related public repositories. It is documentation support, not a formal
+machine-reasoned ontology.
+
+## Validation boundary
+
+`python3 scripts/check_links.py` verifies internal Markdown links and SysML
+file references. Formal SysML parsing, rendering, and semantic validation
+require a separately selected external toolchain and are not verified by this
+repository.
+
+## Public boundary
+
+Keep the repository limited to public documentation and illustrative models.
+Do not add private operational context, credentials, customer data, unpublished
+research material, machine identifiers, deployment configuration, or claims of
+safety certification, production readiness, or formal reasoning that the
+checked-in files cannot support.
