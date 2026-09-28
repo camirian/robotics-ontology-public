@@ -4,7 +4,7 @@ This directory contains foundational SysML v2 models demonstrating core Model-Ba
 
 ## System Decomposition
 
-The following Mermaid diagram illustrates the structural decomposition of the AMR system, which is formally defined in the accompanying `.sysml` files.
+The following Mermaid diagram illustrates the intended structural decomposition of the AMR system described by the accompanying `.sysml` files. Formal parsing and semantic validation are outside this repository's current verification scope.
 
 ```mermaid
 classDiagram
@@ -48,6 +48,6 @@ classDiagram
 *   **`pkg_amr_decomposition.sysml`**: A top-level structural decomposition showing the `Package -> Block -> Part -> Port` hierarchy utilizing redefinitions.
 *   **`uaf_reference_outline.md`**: A draft outline mapping this system to the Unified Architecture Framework (UAF).
 
-## MBSE Methodology
+## Modeling intent
 
-These models adhere to strict standard-compliant SysML v2 syntax to prove system decomposition and integration methodologies. They demonstrate the transition from conceptual architecture (BDD) to functional interconnects (IBD) and formal hierarchical structures.
+These examples are intended to illustrate a transition from a block-definition-style view to internal interconnects and a package decomposition. They are study material, not proof of SysML v2 conformance, a validated system architecture, or an integrated robot design.

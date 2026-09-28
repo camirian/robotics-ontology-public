@@ -3,7 +3,7 @@
 A curated, docs-only reference for cyber-physical robotics work. It contains two things:
 
 1. **[`GLOSSARY.md`](./GLOSSARY.md)** — a living glossary of the terms, acronyms, and concepts used across modern robotics and AI (ROS 2, build tooling, NVIDIA Isaac Sim / Jetson, simulation workflows, and more).
-2. **[`sysml_v2_models/`](./sysml_v2_models/)** — a small library of standard-compliant **SysML v2 textual** models for an Autonomous Mobile Robot (AMR), demonstrating Model-Based Systems Engineering (MBSE) decomposition.
+2. **[`sysml_v2_models/`](./sysml_v2_models/)** — a small set of illustrative **SysML v2 textual** AMR models for exploring Model-Based Systems Engineering (MBSE) decomposition. Formal syntax and semantic validation are not currently recorded.
 
 There is no build step, no service, and no code to run — everything here is Markdown and SysML v2 text that you read and browse directly on GitHub.
 
@@ -30,7 +30,7 @@ The [`sysml_v2_models/`](./sysml_v2_models/) directory models an AMR across thre
 - **`pkg_amr_decomposition.sysml`** — the `Package → Part → Port` hierarchy using redefinitions.
 - **`uaf_reference_outline.md`** — a draft outline mapping the AMR to the Unified Architecture Framework.
 
-The files are plain text using SysML v2 textual (KerML) notation. View them in any editor or directly on GitHub; the Mermaid diagram in [`sysml_v2_models/README.md`](./sysml_v2_models/README.md) renders the structural decomposition.
+The files are plain text intended to use SysML v2 textual (KerML) notation. View them in any editor or directly on GitHub; the Mermaid diagram in [`sysml_v2_models/README.md`](./sysml_v2_models/README.md) illustrates the structural decomposition. The models have not been formally parsed or semantically validated in this repository.
 
 ## Optional: check internal links
 

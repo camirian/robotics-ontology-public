@@ -19,7 +19,7 @@ Open [`GLOSSARY.md`](./GLOSSARY.md). Terms are grouped alphabetically; each entr
 
 ## 3. Read the SysML v2 models
 
-Open the [`sysml_v2_models/`](./sysml_v2_models/) directory and start with its [`README.md`](./sysml_v2_models/README.md), which explains the three models and renders a Mermaid decomposition diagram. The `.sysml` files are plain SysML v2 textual (KerML) notation — open them in any text editor or on GitHub:
+Open the [`sysml_v2_models/`](./sysml_v2_models/) directory and start with its [`README.md`](./sysml_v2_models/README.md), which explains the three models and renders a Mermaid decomposition diagram. The `.sysml` files are illustrative text intended to use SysML v2 textual (KerML) notation — open them in any text editor or on GitHub. Formal syntax and semantic validation have not been recorded; see the [architecture validation boundary](./ARCHITECTURE.md#validation-boundary):
 
 - [`sysml_v2_models/bdd_amr_architecture.sysml`](./sysml_v2_models/bdd_amr_architecture.sysml)
 - [`sysml_v2_models/ibd_amr_interconnects.sysml`](./sysml_v2_models/ibd_amr_interconnects.sysml)
