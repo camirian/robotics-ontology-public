@@ -50,7 +50,7 @@ An active glossary of terms, concepts, and acronyms used throughout my AI and ro
 
 ### Isaac Sim
 -   **Definition**: A photorealistic, physics-accurate robotics simulation platform developed by NVIDIA.
--   **Context/Significance**: Isaac Sim is our "digital twin" environment, allowing us to safely develop and test robotics algorithms before deploying them to physical hardware.
+-   **Context/Significance**: Isaac Sim is a simulation environment for developing and testing robotics algorithms before hardware trials. Simulation results alone do not establish hardware behavior or safety.
 
 ---
 
@@ -58,7 +58,7 @@ An active glossary of terms, concepts, and acronyms used throughout my AI and ro
 
 ### Jetson (Orin Nano)
 -   **Definition**: A series of embedded computing boards from NVIDIA designed for edge AI applications.
--   **Context/Significance**: The Jetson is our "physical target" for "sim-to-real" projects, proving that our algorithms can run on a real, resource-constrained robotic brain.
+-   **Context/Significance**: Jetson is a potential edge-compute target for sim-to-real experiments. Whether an algorithm runs on target hardware requires project-specific measurement; this glossary is not that evidence.
 
 ### JetPack SDK
 -   **Definition**: The software development kit for NVIDIA Jetson modules, bundling the Linux OS, drivers, and CUDA-X accelerated libraries.
